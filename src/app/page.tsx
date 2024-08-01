@@ -1,9 +1,10 @@
-import Image from "next/image";
+import { ArrowLeftCircle } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Lets Build an AI Productivity App</h1>
+    <main className="flex space-x-2 items-center animate-pulse">
+      <ArrowLeftCircle className="w-12 h-12" />
+      <h1 className="font-bold">Get started with creating a New Document</h1>
     </main>
   );
 }
