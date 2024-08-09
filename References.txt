@@ -1,0 +1,4 @@
+https://liveblocks.io/examples/collaborative-text-editor/nextjs-yjs-blocknote
+
+(install libraries from package.json of the reference)
+(additionally also install @blocknote/shadcn and import "@blocknote/shadcn/style.css")
