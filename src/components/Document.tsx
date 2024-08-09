@@ -6,11 +6,14 @@ import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import { useDocumentData } from "react-firebase-hooks/firestore";
 import Editor from "./Editor";
+import useOwner from "@/lib/hooks/useOwner";
+import DeleteDocument from "./DeleteDocument";
 
 function Document({ id }: { id: string }) {
   const [data, loading, error] = useDocumentData(doc(db, "documents", id));
   const [input, setInput] = useState("");
   const [isUpdating, startTransition] = useTransition();
+  const isOwner = useOwner(); //custom hook
 
   useEffect(() => {
     if (data) {
@@ -40,6 +43,11 @@ function Document({ id }: { id: string }) {
           </Button>
 
           {/*IF */}
+          {isOwner && (
+            <>
+              <DeleteDocument />
+            </>
+          )}
           {/* isOwner && InviteUser, DeleteDocument */}
         </form>
       </div>
